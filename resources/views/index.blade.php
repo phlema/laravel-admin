@@ -47,6 +47,7 @@
     @include('admin::partials.sidebar')
 
     <div class="content-wrapper" id="pjax-container">
+        yello
         @yield('content')
         {!! Admin::script() !!}
     </div>
