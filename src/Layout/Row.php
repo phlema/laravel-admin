@@ -9,6 +9,8 @@ class Row implements Buildable
      */
     protected $columns = [];
 
+    protected $row_base = 'row';
+
     /**
      * Row constructor.
      *
@@ -19,6 +21,9 @@ class Row implements Buildable
         if (!empty($content)) {
             $this->column(12, $content);
         }
+
+        $active_theme = config('admin.active_theme');
+        $this->row_base = config('admin.'.$active_theme.'.row_class_base');
     }
 
     /**
@@ -61,7 +66,7 @@ class Row implements Buildable
      */
     protected function startRow()
     {
-        echo '<div class="row">';
+        echo "<div class=\"{$this->row_base}\">";
     }
 
     /**

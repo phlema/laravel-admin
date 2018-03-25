@@ -127,22 +127,6 @@ return [
     ],
 
     /*
-     * @see https://adminlte.io/docs/2.4/layout
-     */
-    'skin' => 'skin-blue-light',
-
-    /*
-    |---------------------------------------------------------|
-    |LAYOUT OPTIONS | fixed                                   |
-    |               | layout-boxed                            |
-    |               | layout-top-nav                          |
-    |               | sidebar-collapse                        |
-    |               | sidebar-mini                            |
-    |---------------------------------------------------------|
-     */
-    'layout' => ['sidebar-mini', 'sidebar-collapse'],
-
-    /*
      * Version displayed in footer.
      */
     'version' => '1.5.x-dev',
@@ -153,4 +137,29 @@ return [
     'extensions' => [
 
     ],
+
+    'active_theme' => 'admin_lte',
+
+    'admin_lte' => [
+        'col_class_base' => 'col-md-',
+        'row_class_base' => 'row',
+        'layout' => ['sidebar-mini', 'sidebar-collapse'],
+
+        /*
+         * @see https://adminlte.io/docs/2.4/layout
+         */
+        'skin' => 'skin-blue-light',
+
+        /*
+        |---------------------------------------------------------|
+        |LAYOUT OPTIONS | fixed                                   |
+        |               | layout-boxed                            |
+        |               | layout-top-nav                          |
+        |               | sidebar-collapse                        |
+        |               | sidebar-mini                            |
+        |---------------------------------------------------------|
+         */
+    ]
+
+
 ];

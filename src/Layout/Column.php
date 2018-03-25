@@ -11,6 +11,8 @@ class Column implements Buildable
      */
     protected $width = 12;
 
+    protected $col_base = 'col-md-';
+
     /**
      * @var array
      */
@@ -31,6 +33,8 @@ class Column implements Buildable
         }
 
         $this->width = $width;
+        $active_theme = config('admin.active_theme');
+        $this->col_base = config('admin.'.$active_theme.'col_class_base');
     }
 
     /**
@@ -98,7 +102,7 @@ class Column implements Buildable
      */
     protected function startColumn()
     {
-        echo "<div class=\"col-md-{$this->width}\">";
+        echo "<div class=\"{$this->col_base}{$this->width}\">";
     }
 
     /**

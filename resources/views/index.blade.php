@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{{ admin_asset("/vendor/laravel-admin/font-awesome/css/font-awesome.min.css") }}">
 
     <!-- Theme style -->
-    <link rel="stylesheet" href="{{ admin_asset("/vendor/laravel-admin/AdminLTE/dist/css/skins/" . config('admin.skin') .".min.css") }}">
+    <link rel="stylesheet" href="{{ admin_asset("/vendor/laravel-admin/AdminLTE/dist/css/skins/" . config('admin.admin_lte.skin') .".min.css") }}">
 
     {!! Admin::css() !!}
     <link rel="stylesheet" href="{{ admin_asset("/vendor/laravel-admin/laravel-admin/laravel-admin.css") }}">
@@ -39,7 +39,7 @@
 
 </head>
 
-<body class="hold-transition {{config('admin.skin')}} {{join(' ', config('admin.layout'))}}">
+<body class="hold-transition {{config('admin.admin_lte.skin')}} {{join(' ', config('admin.admin_lte.layout'))}}">
 <div class="wrapper">
 
     @include('admin::partials.header')
@@ -47,7 +47,6 @@
     @include('admin::partials.sidebar')
 
     <div class="content-wrapper" id="pjax-container">
-        yello
         @yield('content')
         {!! Admin::script() !!}
     </div>
