@@ -1,4 +1,4 @@
-@extends('admin::index')
+@extends('admin::admin_lte.index')
 
 @section('content')
     <section class="content-header">
