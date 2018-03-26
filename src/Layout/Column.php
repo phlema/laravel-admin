@@ -34,7 +34,7 @@ class Column implements Buildable
 
         $this->width = $width;
         $active_theme = config('admin.active_theme');
-        $this->col_base = config('admin.'.$active_theme.'col_class_base');
+        $this->col_base = config('admin.'.$active_theme.'.col_class_base');
     }
 
     /**
