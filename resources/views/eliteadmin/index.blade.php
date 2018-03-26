@@ -9,7 +9,7 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="{{ admin_asset("/vendor/laravel-admin/EliteAdmin/bootstrap/dist/css/bootstrap.min.css") }}" rel="stylesheet">
-    <link href="{{ admin_asset("/vendor/laravel-admin/plugins/EliteAdmin/bower_components/bootstrap-extension/css/bootstrap-extension.css") }}" rel="stylesheet">
+    <link href="{{ admin_asset("/vendor/laravel-admin/EliteAdmin/plugins/bower_components/bootstrap-extension/css/bootstrap-extension.css") }}" rel="stylesheet">
     <!-- Menu CSS -->
     <link href="{{ admin_asset("/vendor/laravel-admin/EliteAdmin/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css") }}" rel="stylesheet">
     <!-- vector map CSS -->
