@@ -2,22 +2,22 @@
     @if(!isset($item['children']))
         <li>
             @if(url()->isValidUrl($item['uri']))
-                <a href="{{ $item['uri'] }}" target="_blank">
-            @else
-                 <a href="{{ admin_base_path($item['uri']) }}">
-            @endif
-                <i class="fa {{$item['icon']}}"></i>
-                <span>{{$item['title']}}</span>
-            </a>
+                <a href="{{ $item['uri'] }}" class="waves-effect" target="_blank">
+                    @else
+                        <a href="{{ admin_base_path($item['uri']) }}" class="waves-effect">
+                            @endif
+                            <i class="linea-icon linea-basic fa-fw fa {{$item['icon']}}" ></i>
+                            <span class="hide-menu">{{$item['title']}}</span>
+                        </a>
         </li>
     @else
-        <li class="treeview">
-            <a href="#">
-                <i class="fa {{$item['icon']}}"></i>
-                <span>{{$item['title']}}</span>
-                <i class="fa fa-angle-left pull-right"></i>
+        <li>
+            <a href="#" class="waves-effect">
+                <i class="linea-icon linea-basic fa-fw fa {{$item['icon']}}"></i>
+                <span class="hide-menu">{{$item['title']}}</span>
+                <span class="fa arrow"></span>
             </a>
-            <ul class="treeview-menu">
+            <ul class="nav nav-second-level">
                 @foreach($item['children'] as $item)
                     @include('admin::partials.menu', $item)
                 @endforeach

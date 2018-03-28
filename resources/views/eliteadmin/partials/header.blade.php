@@ -1,8 +1,9 @@
 <!-- Main Header -->
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-static-top m-b-0">
-    <div class="navbar-header"> <a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="ti-menu"></i></a>
-        <div class="top-left-part"><a class="logo" href="index.html"><b><img src="../plugins/images/eliteadmin-logo.png" alt="home" /></b><span class="hidden-xs"><img src="../plugins/images/eliteadmin-text.png" alt="home" /></span></a></div>
+    <div class="navbar-header">
+        <a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="ti-menu"></i></a>
+
         <ul class="nav navbar-top-links navbar-left hidden-xs">
             <li><a href="javascript:void(0)" class="open-close hidden-xs waves-effect waves-light"><i class="icon-arrow-left-circle ti-menu"></i></a></li>
             <li>
@@ -105,15 +106,15 @@
             </li>
             <!-- /.dropdown -->
             <li class="dropdown">
-                <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> <img src="../plugins/images/users/varun.jpg" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">Steave</b> </a>
+                <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> <img src="{{ Admin::user()->avatar }}" class="img-circle" width="36" alt="User Image"><b class="hidden-xs">{{ Admin::user()->name }}</b> </a>
                 <ul class="dropdown-menu dropdown-user animated flipInY">
                     <li><a href="#"><i class="ti-user"></i> My Profile</a></li>
                     <li><a href="#"><i class="ti-wallet"></i> My Balance</a></li>
                     <li><a href="#"><i class="ti-email"></i> Inbox</a></li>
                     <li role="separator" class="divider"></li>
-                    <li><a href="#"><i class="ti-settings"></i> Account Setting</a></li>
+                    <li><a href="{{ admin_base_path('auth/setting') }}"><i class="ti-settings"></i> {{ trans('admin.settings') }}</a></li>
                     <li role="separator" class="divider"></li>
-                    <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
+                    <li><a href="{{ admin_base_path('auth/logout') }}"><i class="fa fa-power-off"></i> {{ trans('admin.logout') }}</a></li>
                 </ul>
                 <!-- /.dropdown-user -->
             </li>
@@ -202,71 +203,13 @@
             <li class="right-side-toggle"> <a class="waves-effect waves-light" href="javascript:void(0)"><i class="ti-settings"></i></a></li>
             <!-- /.dropdown -->
         </ul>
+        <div class="top-left-part"><a class="logo" href="{{ admin_base_path('/') }}" class="logo">
+                <b>{!! config('admin.logo', config('admin.name')) !!}</b>
+                <span class="hidden-xs">{!! config('admin.logo-mini', config('admin.name')) !!}</span></a>
+
+        </div>
     </div>
     <!-- /.navbar-header -->
     <!-- /.navbar-top-links -->
     <!-- /.navbar-static-side -->
 </nav>
-
-<header class="main-header">
-
-    <!-- Logo -->
-    <a href="{{ admin_base_path('/') }}" class="logo">
-        <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini">{!! config('admin.logo-mini', config('admin.name')) !!}</span>
-        <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg">{!! config('admin.logo', config('admin.name')) !!}</span>
-    </a>
-
-    <!-- Header Navbar -->
-    <nav class="navbar navbar-static-top" role="navigation">
-        <!-- Sidebar toggle button-->
-        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-            <span class="sr-only">Toggle navigation</span>
-        </a>
-
-        {!! Admin::getNavbar()->render('left') !!}
-
-        <!-- Navbar Right Menu -->
-        <div class="navbar-custom-menu">
-            <ul class="nav navbar-nav">
-
-                {!! Admin::getNavbar()->render() !!}
-
-                <!-- User Account Menu -->
-                <li class="dropdown user user-menu">
-                    <!-- Menu Toggle Button -->
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <!-- The user image in the navbar-->
-                        <img src="{{ Admin::user()->avatar }}" class="user-image" alt="User Image">
-                        <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                        <span class="hidden-xs">{{ Admin::user()->name }}</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <!-- The user image in the menu -->
-                        <li class="user-header">
-                            <img src="{{ Admin::user()->avatar }}" class="img-circle" alt="User Image">
-
-                            <p>
-                                {{ Admin::user()->name }}
-                                <small>Member since admin {{ Admin::user()->created_at }}</small>
-                            </p>
-                        </li>
-                        <li class="user-footer">
-                            <div class="pull-left">
-                                <a href="{{ admin_base_path('auth/setting') }}" class="btn btn-default btn-flat">{{ trans('admin.setting') }}</a>
-                            </div>
-                            <div class="pull-right">
-                                <a href="{{ admin_base_path('auth/logout') }}" class="btn btn-default btn-flat">{{ trans('admin.logout') }}</a>
-                            </div>
-                        </li>
-                    </ul>
-                </li>
-                <!-- Control Sidebar Toggle Button -->
-                {{--<li>--}}
-                    {{--<a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>--}}
-                {{--</li>--}}
-            </ul>
-        </div>
-    </nav>
-</header>

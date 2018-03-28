@@ -20,6 +20,27 @@
     <!-- Custom CSS -->
     <link href="{{ admin_asset("/vendor/laravel-admin/EliteAdmin/css/style.css") }}" rel="stylesheet">
 
+    {!! Admin::css() !!}
+    <link rel="stylesheet" href="{{ admin_asset("/vendor/laravel-admin/laravel-admin/laravel-admin.css") }}">
+    <link rel="stylesheet" href="{{ admin_asset("/vendor/laravel-admin/nprogress/nprogress.css") }}">
+    <link rel="stylesheet" href="{{ admin_asset("/vendor/laravel-admin/sweetalert/dist/sweetalert.css") }}">
+    <link rel="stylesheet" href="{{ admin_asset("/vendor/laravel-admin/nestable/nestable.css") }}">
+    <link rel="stylesheet" href="{{ admin_asset("/vendor/laravel-admin/toastr/build/toastr.min.css") }}">
+    <link rel="stylesheet" href="{{ admin_asset("/vendor/laravel-admin/bootstrap3-editable/css/bootstrap-editable.css") }}">
+    <link rel="stylesheet" href="{{ admin_asset("/vendor/laravel-admin/google-fonts/fonts.css") }}">
+
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{{ admin_asset("/vendor/laravel-admin/EliteAdmin/css/colors/" . config('admin.eliteadmin.skin') .".css") }}">
+
+
+    <!-- jQuery -->
+    <script src="{{ admin_asset ("/vendor/laravel-admin/EliteAdmin/plugins/bower_components/jquery/dist/jquery.min.js") }}"></script>
+    <!-- Bootstrap Core JavaScript -->
+
+    <script src="{{ admin_asset ("/vendor/laravel-admin/jquery-pjax/jquery.pjax.js") }}"></script>
+    <script src="{{ admin_asset ("/vendor/laravel-admin/nprogress/nprogress.js") }}"></script>
+
+
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -33,14 +54,14 @@
     <div class="cssload-speeding-wheel"></div>
 </div>
 
-<div class="wrapper">
+<div id="wrapper" class="wrapper">
 
     @include('admin::partials.header')
 
     @include('admin::partials.sidebar')
 
-    <div id="page-wrapper" class="content-wrapper">
-        <div class="container-fluid">
+    <div id="page-wrapper">
+        <div  id="pjax-container" class="container-fluid">
             @yield('content')
             {!! Admin::script() !!}
         </div>
@@ -59,9 +80,7 @@
 </script>
 
 
-<!-- jQuery -->
-<script src="{{ admin_asset ("/vendor/laravel-admin/EliteAdmin/plugins/bower_components/jquery/dist/jquery.min.js") }}"></script>
-<!-- Bootstrap Core JavaScript -->
+
 <script src="{{ admin_asset ("/vendor/laravel-admin/EliteAdmin/bootstrap/dist/js/tether.min.js") }}"></script>
 <script src="{{ admin_asset ("/vendor/laravel-admin/EliteAdmin/bootstrap/dist/js/bootstrap.min.js") }}"></script>
 <script src="{{ admin_asset ("/vendor/laravel-admin/EliteAdmin/plugins/bower_components/bootstrap-extension/js/bootstrap-extension.min.js") }}"></script>
@@ -70,7 +89,7 @@
 <!--slimscroll JavaScript -->
 <script src="{{ admin_asset ("/vendor/laravel-admin/EliteAdmin/js/jquery.slimscroll.js") }}"></script>
 <!--Wave Effects -->
-<script src="js/waves.js"></script>
+<script src="{{ admin_asset ("/vendor/laravel-admin/EliteAdmin/js/waves.js") }}"></script>
 <!-- Flot Charts JavaScript -->
 <script src="{{ admin_asset ("/vendor/laravel-admin/EliteAdmin/plugins/bower_components/flot/jquery.flot.js") }}"></script>
 <script src="{{ admin_asset ("/vendor/laravel-admin/EliteAdmin/plugins/bower_components/flot.tooltip/js/jquery.flot.tooltip.min.js") }}"></script>
@@ -84,12 +103,16 @@
 <script src="{{ admin_asset ("/vendor/laravel-admin/EliteAdmin/plugins/bower_components/jquery.easy-pie-chart/easy-pie-chart.init.js") }}"></script>
 <!-- Custom Theme JavaScript -->
 <script src="{{ admin_asset ("/vendor/laravel-admin/EliteAdmin/js/custom.min.js") }}"></script>
-<script src="{{ admin_asset ("/vendor/laravel-admin/EliteAdmin/js/dashboard2.js") }}"></script>
+{{--<script src="{{ admin_asset ("/vendor/laravel-admin/EliteAdmin/js/dashboard2.js") }}"></script>--}}
 <!--Style Switcher -->
 <script src="{{ admin_asset ("/vendor/laravel-admin/EliteAdmin/plugins/bower_components/styleswitcher/jQuery.style.switcher.js") }}"></script>
 <!--Style Switcher -->
 <script src="{{ admin_asset ("/vendor/laravel-admin/EliteAdmin/plugins/bower_components/styleswitcher/jQuery.style.switcher.js") }}"></script>
 <!-- REQUIRED JS SCRIPTS -->
+<script src="{{ admin_asset ("/vendor/laravel-admin/nestable/jquery.nestable.js") }}"></script>
+<script src="{{ admin_asset ("/vendor/laravel-admin/toastr/build/toastr.min.js") }}"></script>
+<script src="{{ admin_asset ("/vendor/laravel-admin/bootstrap3-editable/js/bootstrap-editable.min.js") }}"></script>
+<script src="{{ admin_asset ("/vendor/laravel-admin/sweetalert/dist/sweetalert.min.js") }}"></script>
 {!! Admin::js() !!}
 <script src="{{ admin_asset ("/vendor/laravel-admin/laravel-admin/laravel-admin.js") }}"></script>
 
