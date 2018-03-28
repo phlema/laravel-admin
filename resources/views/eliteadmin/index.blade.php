@@ -19,6 +19,7 @@
     <link href="{{ admin_asset("/vendor/laravel-admin/EliteAdmin/css/animate.css") }}" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="{{ admin_asset("/vendor/laravel-admin/EliteAdmin/css/style.css") }}" rel="stylesheet">
+    <link href="{{ admin_asset("/vendor/laravel-admin/EliteAdmin/css/custom.css") }}" rel="stylesheet">
 
     {!! Admin::css() !!}
     <link rel="stylesheet" href="{{ admin_asset("/vendor/laravel-admin/laravel-admin/laravel-admin.css") }}">
@@ -48,7 +49,7 @@
 
 </head>
 
-<body>
+<body class="fix-header">
 <!-- Preloader -->
 <div class="preloader">
     <div class="cssload-speeding-wheel"></div>
