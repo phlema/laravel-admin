@@ -38,13 +38,20 @@
     </div>
     <!-- /.row -->
 
-    <section class="content">
+    {{--<section class="content">--}}
 
         @include('admin::partials.error')
         @include('admin::partials.success')
         @include('admin::partials.exception')
         @include('admin::partials.toastr')
-            {!! $content !!}
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="white-box">
+                    {!! $content !!}
+                </div>
+            </div>
+        </div>
 
-    </section>
+
+    {{--</section>--}}
 @endsection

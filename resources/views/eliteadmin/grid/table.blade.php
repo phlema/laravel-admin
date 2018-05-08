@@ -1,4 +1,5 @@
-<div class="box">
+<div class="white-box">
+    <div class="box">
     <div class="box-header">
 
         <h3 class="box-title"></h3>
@@ -41,4 +42,5 @@
         {!! $grid->paginator() !!}
     </div>
     <!-- /.box-body -->
+</div>
 </div>

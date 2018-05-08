@@ -60,7 +60,7 @@
                     <li role="separator" class="divider"></li>
                     <li><a href="{{ admin_base_path('auth/setting') }}"><i class="ti-settings"></i> {{ trans('admin.settings') }}</a></li>
                     <li role="separator" class="divider"></li>
-                    <li><a href="{{ admin_base_path('auth/logout') }}"><i class="fa fa-power-off"></i> {{ trans('admin.logout') }}</a></li>
+                    <li><a href="{{ admin_base_path('/logout') }}"><i class="fa fa-power-off"></i> {{ trans('admin.logout') }}</a></li>
                 </ul>
                 <!-- /.dropdown-user -->
             </li>
