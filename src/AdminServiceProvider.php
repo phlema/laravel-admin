@@ -52,8 +52,8 @@ class AdminServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $active_theme = config('admin.active_theme');
-        $this->loadViewsFrom(__DIR__."/../resources/views/$active_theme", 'admin');
+        // $active_theme = config('admin.active_theme');
+        //$this->loadViewsFrom(__DIR__."/../resources/views/$active_theme", 'admin');
 
         if (file_exists($routes = admin_path('routes.php'))) {
             $this->loadRoutesFrom($routes);
